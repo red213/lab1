@@ -43,6 +43,9 @@ class Calculator(object):
     def abs(self, num1):
         return abs(num1)
 
+    def module(selfself, num1, num2):
+        return num1 % num2
+
 class Operations(Calculator):
     def __init__(self, num1, num2):
         super().__init__(num1, num2)
@@ -57,7 +60,8 @@ class Operations(Calculator):
                     '//': self.remainder(self.num1, self.num2),
                     'inc': self.inc(self.num1),
                     'dec': self.dec(self.num1),
-                    'abs': self.abs(self.num1)}
+                    'abs': self.abs(self.num1),
+                    'mod': self.module(self.num1, self.num2)}
         result = switcher.get(operation)
         return result
 
