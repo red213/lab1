@@ -34,7 +34,11 @@ class Calculator(object):
     def remainder(self, num1, num2):
         return num1 // num2
 
+    def inc(self, num1):
+        return num1 + 1
 
+    def dec(self, num1):
+        return num1-1
 
 class Operations(Calculator):
     def __init__(self, num1, num2):
@@ -47,7 +51,9 @@ class Operations(Calculator):
                     '*': self.multiply(self.num1, self.num2),
                     '/': self.devide(self.num1, self.num2),
                     '**': self.power(self.num1, self.num2),
-                    '//': self.remainder(self.num1, self.num2)}
+                    '//': self.remainder(self.num1, self.num2),
+                    'inc': self.inc(self.num1),
+                    'dec': self.dec(self.num1)}
         result = switcher.get(operation)
         return result
 
